@@ -1,0 +1,16 @@
+version: '3'
+services:
+  frontend:
+    image: vggfront
+    entrypoint: python3
+    command: app.py
+    ports:
+     - "5001:5000"
+
+  backend:
+    image: vggback
+    entrypoint: python3
+    command: app.py
+    ports:
+     - "5000:5000"
+    tty: true

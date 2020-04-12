@@ -1,14 +1,14 @@
 version: '3'
 services:
   frontend:
-    image: vggfront
+    build: https://github.com/4649AP/ds_example.git#master:frontend
     entrypoint: python3
     command: app.py
     ports:
      - "5001:5000"
 
   backend:
-    image: vggback
+    build: https://github.com/4649AP/ds_example.git#master:backend
     entrypoint: python3
     command: app.py
     ports:

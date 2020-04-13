@@ -1,5 +1,5 @@
 Flask
 Keras==2.2.5
 numpy
-tensorflow==1.15.2
+tensorflow==1.2
 Pillow

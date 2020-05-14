@@ -1,5 +1,5 @@
 
-# VGGNet image classifier with web-based image upload
+# Docker Compose Project: VGGNet image classifier with web-based image upload
 
 Instructions:
 1) Run docker-compose up (docker-compose.yml) to build frontend and backend iamges from this github repository

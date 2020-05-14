@@ -15,13 +15,6 @@ app = Flask(__name__)
 @app.route('/predict', methods=['POST'])
 def predict():
     label = None
-    # parameters = request.get_json(force=True)
-    # f1 = int(parameters['f1'])
-    # f2 = int(parameters['f2'])
-    # f3 = int(parameters['f3'])
-    # spending_score = model.predict(([f1, f2, f3],))[0]
-    # print(spending_score)
-    # return jsonify(spending_score)
 
     # filename = 'images/cat.jpg'
     filename = request.files['file']
@@ -30,15 +23,10 @@ def predict():
     print('PIL image size',original.size)
 
     # convert the PIL image to a numpy array
-    # IN PIL - image is in (width, height, channel)
-    # In Numpy - image is in (height, width, channel)
     numpy_image = img_to_array(original)
     print('numpy array size',numpy_image.shape)
 
     # Convert the image / images into batch format
-    # expand_dims will add an extra dimension to the data at a particular axis
-    # We want the input matrix to the network to be of the form (batchsize, height, width, channels)
-    # Thus we add the extra dimension to the axis 0.
     image_batch = np.expand_dims(numpy_image, axis=0)
     print('image batch size', image_batch.shape)
 
